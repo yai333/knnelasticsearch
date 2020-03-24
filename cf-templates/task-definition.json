@@ -1,0 +1,47 @@
+{
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": $SERVICE_LOG_GROUP,
+          "awslogs-region": "ap-southeast-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 8000
+        }
+      ],
+      "cpu": 1024,
+      "memory": 4000,
+      "image": $IMAGE,
+      "essential": true,
+      "name": "knn-search",
+      "mountPoints": [
+        {
+          "containerPath": "/api/model",
+          "sourceVolume": "fs-knnsearch"
+        }
+      ]
+    }
+  ],
+  "volumes": [
+    {
+      "name": "fs-knnsearch",
+      "efsVolumeConfiguration": {
+        "fileSystemId": $FILE_SYSTEM_ID,
+        "rootDirectory": "/"
+      }
+    }
+  ],
+  "memory": "4000",
+  "taskRoleArn": $TASK_ROLE_ARN,
+  "executionRoleArn": $EXECUTION_ROLE_ARN,
+  "requiresCompatibilities": ["EC2"],
+  "family": "knn-search",
+  "cpu": "1024"
+}
