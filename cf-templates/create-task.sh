@@ -46,9 +46,9 @@ task_def_arn=$(aws --profile "${AWS_PROFILE}" --region "${AWS_DEFAULT_REGION}" \
     --cli-input-json "${task_def_json}" \
     --query [taskDefinition.taskDefinitionArn] --output text)
 
-#update ECS servcie if there is new version of task definiton
-aws ecs update-service  --profile "${AWS_PROFILE}" --region "${AWS_DEFAULT_REGION}" \
-                        --cluster ${cluster_name} \
-                        --service knn-search \
-                        --task-definition ${task_def_arn} \
-                        --desired-count 1
+# update ECS servcie if there is new version of task definiton
+# aws ecs update-service  --profile "${AWS_PROFILE}" --region "${AWS_DEFAULT_REGION}" \
+#                         --cluster ${cluster_name} \
+#                         --service knn-search \
+#                         --task-definition ${task_def_arn} \
+#                         --desired-count 1
