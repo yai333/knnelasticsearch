@@ -1,9 +1,11 @@
 # Overview
 
 This is sample project shows how to build a scalable similarity questions search Engine using Amazon Sagemaker, Amazon Elasticsearch, Amazon Elastic File System (EFS) and Amazon ECS.
+
 https://towardsdatascience.com/building-a-k-nn-similarity-search-engine-using-amazon-elasticsearch-and-sagemaker-98df18d883bd
 
-##Jupyter notebook
+## Jupyter notebook
+
 You can use `knn-search.ipynb` to transform and index dataset to Elasticsearch.
 
 ## Build docker image
