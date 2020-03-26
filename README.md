@@ -15,7 +15,7 @@ The following must be done before following this guide:
 - Setup an AWS account.
 - Configure the AWS CLI with user credentials.
 - Install AWS CLI.
-- jq (optional).
+- jq.
 
 ## Build docker image
 
