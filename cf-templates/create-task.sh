@@ -31,7 +31,7 @@ EFS_ID=$(aws  --region ap-southeast-2 \
     cloudformation describe-stacks --stack-name knn-search-infra \
       --query 'Stacks[0].Outputs[?OutputKey==`FileSystemID`].OutputValue' \
       --output text)
-#Api v1 Task Definition
+
 task_def_json=$(jq -n \
     --arg IMAGE $IMAGE \
     --arg SERVICE_LOG_GROUP $ecs_service_log_group \

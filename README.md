@@ -8,6 +8,15 @@ https://towardsdatascience.com/building-a-k-nn-similarity-search-engine-using-am
 
 You can use `knn-search.ipynb` to transform and index dataset to Elasticsearch.
 
+## Prerequisites
+
+The following must be done before following this guide:
+
+- Setup an AWS account.
+- Configure the AWS CLI with user credentials.
+- Install AWS CLI.
+- jq (optional).
+
 ## Build docker image
 
 Create a ECR repo in ECS console, copy repo url and build docker.
